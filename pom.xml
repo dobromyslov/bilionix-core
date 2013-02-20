@@ -64,7 +64,7 @@
             <url>http://repository.bilionix.com/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>Bilionix-snapshots</id>
+            <id>bilionix-snapshots</id>
             <name>Bilionix Snapshots Repository</name>
             <url>http://repository.bilionix.com/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
