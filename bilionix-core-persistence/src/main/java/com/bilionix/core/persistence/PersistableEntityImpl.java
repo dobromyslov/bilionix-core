@@ -20,7 +20,7 @@ public class PersistableEntityImpl implements PersistableEntity {
 
     /**
      * Версия объекта.
-     * Необходима для Optimistic Concurrency COntrol и GWT RequestFactory.
+     * Необходима для Optimistic Concurrency Control и GWT RequestFactory.
      */
     @NotNull
     @Version
