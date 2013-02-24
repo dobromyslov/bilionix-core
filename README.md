@@ -14,7 +14,49 @@ Project is based on Maven builder.
 * com.bilionix.core.interfaces;
 * com.bilionix.core.persistence.
 
-### Usage
+### Interfaces usage
+
+To use interfaces as external GWT module you should:
+
+1. Add maven dependency to `bilionix-core-interfaces` artifact;
+2. Use `compileSourcesArtifacts` parameter in your `maven-gwt-compiler` plugin.
+
+Sample pom.xml:
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bilionix.core</groupId>
+                <artifactId>bilionix-core-interfaces</artifactId>
+                <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>gwt-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <configuration>
+                    <compileSourcesArtifacts>
+                        <compileSourcesArtifact>com.bilionix.core:bilionix-core-interfaces</compileSourcesArtifact>
+                    </compileSourcesArtifacts>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+See official docs for more information: http://mojo.codehaus.org/gwt-maven-plugin/compile-mojo.html#compileSourcesArtifacts
+
+
+Then you should inherit your GWT module:
+
+    <module>
+        <inherits name="com.bilionix.core.interfaces.Interfaces"/>
+        <!-- ... -->
+    </module>
+
+### Persistence usage
 
 To depend on this project you have to create persistence unit and share in your EAR project as described:
 http://stackoverflow.com/questions/4073635/sharing-a-persistence-unit-across-components-in-a-ear-file/14971161#14971161
